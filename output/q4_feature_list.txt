@@ -1,0 +1,2 @@
+air_temp_rolling_7h
+humidity_rolling_24h
