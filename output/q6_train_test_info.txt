@@ -9,5 +9,5 @@ Test Set Size: 36,555 samples
 Training Date Range: 2015-04-25 09:00:00 to 2023-05-24 20:00:00
 Test Date Range: 2023-05-24 21:00:00 to 2025-11-30 21:00:00
 
-Number of Features: 19
+Number of Features: 18
 Target Variable: Air Temperature
