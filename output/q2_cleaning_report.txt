@@ -1,106 +1,51 @@
-DATA CLEANING REPORT
+
+DATA CLEANING REPORT 
 ====================
 
 Rows before cleaning: 196194
+
 Missing Data Handling:
-- Air Temperature: 75 missing calues (0.04%)
- Method: Median imputation
- Result: All missing values filled
-- Wet Bulb Temperature: 75887 missing calues (38.68%)
- Method: Median imputation
- Result: All missing values filled
-- Humidity: 0 missing calues (0.0%)
- Method: Median imputation
- Result: All missing values filled
-- Rain Intensity: 75887 missing calues (38.68%)
- Method: Median imputation
- Result: All missing values filled
-- Interval Rain: 0 missing calues (0.0%)
- Method: Median imputation
- Result: All missing values filled
-- Total Rain: 75887 missing calues (38.68%)
- Method: Median imputation
- Result: All missing values filled
-- Precipitation Type: 75887 missing calues (38.68%)
- Method: Median imputation
- Result: All missing values filled
-- Wind Direction: 0 missing calues (0.0%)
- Method: Median imputation
- Result: All missing values filled
-- Wind Speed: 0 missing calues (0.0%)
- Method: Median imputation
- Result: All missing values filled
-- Maximum Wind Speed: 0 missing calues (0.0%)
- Method: Median imputation
- Result: All missing values filled
-- Barometric Pressure: 146 missing calues (0.07%)
- Method: Median imputation
- Result: All missing values filled
-- Solar Radiation: 0 missing calues (0.0%)
- Method: Median imputation
- Result: All missing values filled
-- Heading: 75887 missing calues (38.68%)
- Method: Median imputation
- Result: All missing values filled
-- Battery Life: 0 missing calues (0.0%)
- Method: Median imputation
- Result: All missing values filled
-- Station Name: 0 missing calues (0.0%)
- Method: Imputed as unknown
- Result: All missing values filled
-- Measurement Timestamp: 0 missing calues (0.0%)
- Method: Imputed as unknown
- Result: All missing values filled
-- Measurement Timestamp Label: 0 missing calues (0.0%)
- Method: Imputed as unknown
- Result: All missing values filled
-- Measurement ID: 0 missing calues (0.0%)
- Method: Imputed as unknown
- Result: All missing values filled
-- Measurement Timestamp: 0 missing calues (0.0%)
- Method: Imputed as unknown
- Result: All missing values filled
+- Air Temperature: 75 missing values (0.04%)
+  Method: Filled with median
+  Result: All missing values filled
+
+- Wet Bulb Temperature: 75887 missing values (38.68%)
+  Method: Filled with median
+  Result: All missing values filled
+
+- Rain Intensity: 75887 missing values (38.68%)
+  Method: Filled with median
+  Result: All missing values filled
+
+- Total Rain: 75887 missing values (38.68%)
+  Method: Filled with median
+  Result: All missing values filled
+
+- Precipitation Type: 75887 missing values (38.68%)
+  Method: Filled with mode
+  Result: All missing values filled
+
+- Barometric Pressure: 146 missing values (0.07%)
+  Method: Filled with median
+  Result: All missing values filled
+
+- Heading: 75887 missing values (38.68%)
+  Method: Filled with median
+  Result: All missing values filled
+
+
 
 Outlier Handling:
-- Humidity: Out-of-range values detected (<0 or >100): 0
- Method: Removed
- Result: 0 rows removed
+- Battery Life: Detected 6 outliers using IQR method (1.5 x IQR)
+  Method: Capped at bounds [Q1 - 1.5*IQR, Q3 + 1.5*IQR]
+  Bounds: [7.10, 19.90]
+  Result: 6 values capped
 
-Outlier Handling:
-- Wind Direction: Out-of-range values detected (<0 or >360): 0
- Method: Removed
- Result: 0 rows removed
 
-Outlier Handling:
-- Heading: Out-of-range values detected (<0 or >360): 0
- Method: Removed
- Result: 0 rows removed
-
-Outlier Handling:
-- Battery Life: Out-of-range values detected (<0 or >100): 0
- Method: Removed
- Result: 0 rows removed
-- Rain Intensity: Out-of-range values detected (<0)
- Method: Removed
- Result: 0 rows removed
-- Interval Rain: Out-of-range values detected (<0)
- Method: Removed
- Result: 1 rows removed
-- Total Rain: Out-of-range values detected (<0)
- Method: Removed
- Result: 0 rows removed
-- Wind Speed: Out-of-range values detected (<0)
- Method: Removed
- Result: 0 rows removed
-- Maximum Wind Speed: Out-of-range values detected (<0)
- Method: Removed
- Result: 0 rows removed
-- Solar Radiation: Out-of-range values detected (<0)
- Method: Removed
- Result: 13425 rows removed
 
 Duplicates Removed: 0
 
 Data Type Conversions:
+- Precipitation Type: converted to categorical type for better handling.
 
 Rows after cleaning: 182768
