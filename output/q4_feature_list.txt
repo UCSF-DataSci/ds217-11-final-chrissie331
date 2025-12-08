@@ -1,2 +1,7 @@
-air_temp_rolling_7h
-humidity_rolling_24h
+wetbulb_humidity_diff
+wind_ratio
+humidity_wind_interaction
+wind_speed_squared
+wind_category
+interval_rain_rolling_7h
+wind_speed_rolling_24h
