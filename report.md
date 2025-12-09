@@ -7,7 +7,7 @@ In this analysis we examine the weather sensor data from Chicago beaches contain
 
 ## Phase-by-Phase Findings 
 
-### Phase 1 Exploration 
+### Phase 1-2 Exploration 
 The initial exploration revealed a dataset containing 196,194 rows with 18 columns. Columns included `Station Name`, `Measurement Timestamp`, `Air Temperature`, `Wet Bulb Temperature`, `Humidity`, `Rain Intensity`, `Interval Rain`, `Total Rain`, `Precipitation Type`, `Wind Direction`, `Wind Speed`, `Maximum Wind Speed`, `Barometric Pressure`, `Solar Radiation`, `Heading`, `Battery Life`, `Measurement Timestamp Label`, and `Measurement ID`. The measurements are taken from three different weather stations: 63rd Street Weather Station, Foster Weather Station, and Oak Street Weather Station. The data spans from April 15, 2025 to November 30, 2025. 
 
 #### Key Data Quality Issues Identified 
@@ -24,7 +24,7 @@ The graph on the left shows the distribution plot of Air Temperature. The mean i
 
 ---
 
-### Phase 2: Data Cleaning
+### Phase 3: Data Cleaning
 The data cleaning phase addressed issues regarding missing values, outliers, duplicates, and data type conversions. Impossible values were removed first. For example, humidity levels were given a range of 0-100. Rain intensity, total rain, interval rain, wind speed, maximum wind speed, and solar radiation cannot be negative. Wing direction and heading were given a range of 0-360. These decisions were made based on domain knowledge. Once impossible values were removed, numeric variables were filled using the median. Even though precipitation type is numeric, it was more logical to convert into a category. Missing values in precipitation types was filled using the mode. Measurement timestamp was filled using both forward fill and backward fill. Object columns were filled with "unknown."
 
 
@@ -44,7 +44,7 @@ The cleaning process removed 13,426 rows. Missing numeric variables were imputed
 
 ---
 
-### Phase 3: Data Wrangling 
+### Phase 4: Data Wrangling 
 In order to perform time series analysis, datetime parsing and temportal feature extraction is necessary. The `Measurement Timestamp` column was parsed from the format "MM/DD/YYYY HH:MM:SS AM/PM" and set as the DataFrame index. 
 
 #### Temporal Features Extracted:
@@ -59,7 +59,7 @@ The dataset covers from April 2015 - November 2025 (approximately 10 years)
 
 ---
 
-### Phase 4: Feature Engineering 
+### Phase 5: Feature Engineering 
 In this phase, derived features and rolling statistics were used to examine the relationships and temporal dependencies. 
 
 #### Derived Features:
@@ -76,7 +76,7 @@ Features that involve the target variable were not created to avoid data leakage
 
 ---
 
-### Phase 5: Pattern Analysis 
+### Phase 6: Pattern Analysis 
 This phase revealed important patterns and correlations between variables. 
 
 #### Temporal Trends:
@@ -99,7 +99,7 @@ This phase revealed important patterns and correlations between variables.
 
 ---
 
-### Phase 6: Modeling Preparation
+### Phase 7: Modeling Preparation
 A target variable was selected and temporal train/test splitting was perfomed. For this project, air temperature is the target variable. 
 
 #### Temporal Train/Test Split 
@@ -116,7 +116,7 @@ A target variable was selected and temporal train/test splitting was perfomed. F
 
 ---
 
-### Phase 7: Modeling
+### Phase 8: Modeling
 For this phase, two models were trained and evaluated: Linear Regression and XGBoost. 
 
 #### Model Performance:
@@ -143,7 +143,7 @@ The wet bulb temperature feature accounts for 64% of total importance. This make
 
 ---
 
-### Phase 8: Results
+### Phase 9: Results
 The final results show a decent of prediction of air temperature with accuracy. The XGBoost model achieved a high performance on the test set with predictions within 5.0905°C. 
 
 #### Summary of Key Findings:
