@@ -229,7 +229,7 @@ The analysis revealed important temporal patterns:
     - Include other different variables that are less similar to each other (total rain, interval rain)
 2. **Model Improvements:**
     - Try additional models such as Random Forest 
-    - Can maybe try to implement stacking
+    - Try implementing stacking methods that can potentially create more accurate models
 
 --- 
 
