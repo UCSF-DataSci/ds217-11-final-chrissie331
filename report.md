@@ -1,7 +1,7 @@
 # Chicago Beach Weather Sensors Analysis 
 
 ## Executive summary 
-In this analysis we examine the weather sensor data from Chicago beaches containing 196,194 data collected hourly from April 2015 to November 2025 over a span of three different stations. This projects consists of a total of 9 phases. Phases 1-3 are mostly responsible for data exploring, cleaning and wrangling. Phases 4-6 prepares the dataset for modeling. Phases 7-8 models the data which allows us to interpret the results. The workflow allows us to better understand the temportal patterns and build predictive models for air temperature. From the predictive models, XGBoost outperformed the other models with a test R² of 0.7441, test RMSE of 5.0905°C, and test MAE of 3.2852°C.
+In this analysis we examine the weather sensor data from Chicago beaches containing 196,194 data collected hourly from April 2015 to November 2025 over a span of three different stations. This projects consists of a total of 9 phases. Phases 1-3 are responsible for data exploring and cleaning. Phases 4-6 involves data wrangling, feature engineering, and pattern analysis. Phases 7-9 prepares the data for modeling, creates models, and interprets the results . The workflow allows us to better understand the temportal patterns and build predictive models for air temperature. From the predictive models, XGBoost outperformed the other models with a test R² of 0.7441, test RMSE of 5.0905°C, and test MAE of 3.2852°C.
 
 ---
 
