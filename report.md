@@ -28,7 +28,7 @@ The graph on the left shows the distribution plot of Air Temperature. The mean i
 The data cleaning phase addressed issues regarding missing values, outliers, duplicates, and data type conversions. Impossible values were removed first. For example, humidity levels were given a range of 0-100. Rain intensity, total rain, interval rain, wind speed, maximum wind speed, and solar radiation cannot be negative. Wing direction and heading were given a range of 0-360. These decisions were made based on domain knowledge. Once impossible values were removed, numeric variables were filled using the median. Even though precipitation type is numeric, it was more logical to convert into a category. Missing values in precipitation types was filled using the mode. Measurement timestamp was filled using both forward fill and backward fill. Object columns were filled with "unknown."
 
 
-#### Cleaining Results 
+#### Cleaning Results 
 - Rows before cleaning: **196,194**
 - Missing values: Forward filled, backward filled, median-imputed,   mode-imputed 
     - `Air Temperature`: 75 missing -> 0 missing 
